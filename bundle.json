@@ -1,0 +1,85 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:patient-3c0f63fb-a8f4-4be7-ba6d-9a4da34c16e1",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "db46fdd5-c946-40d6-b5b5-b206fd1ec04f",
+        "identifier": [
+          {
+            "system": "urn:id:MR",
+            "value": "999999999"
+          }
+        ],
+        "name": [
+          {
+            "family": "DOE",
+            "given": [
+              "JANE"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1985-10-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:immunization-348171cf-b768-459c-a7e3-de24884fef8d",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "c0015f44-6102-4464-848e-10e61ae44de5",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "urn:id:CVX",
+              "code": "115",
+              "display": "Tdap"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:patient-3c0f63fb-a8f4-4be7-ba6d-9a4da34c16e1"
+        },
+        "occurrenceDateTime": "2023-09-23T00:00:00",
+        "site": {
+          "coding": [
+            {
+              "system": "urn:id:HL70163",
+              "code": "LA",
+              "display": "Left Arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "urn:id:HL70162",
+              "code": "IM",
+              "display": "Intramuscular"
+            }
+          ]
+        },
+        "doseQuantity": {
+          "value": 0.5,
+          "unit": "mL"
+        },
+        "note": [
+          {
+            "text": "VIS presented: 2023-09-23T00:00:00"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Immunization"
+      }
+    }
+  ]
+}
